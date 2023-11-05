@@ -2,7 +2,11 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['images.prismic.io'],
+        remotePatterns: [{
+            protocol: 'https',
+            hostname: 'images.prismic.io',
+            port: ''
+        }],
     },
     //add import alias
 

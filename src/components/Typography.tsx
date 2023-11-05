@@ -24,7 +24,7 @@ const typographyVariants = cva(
       'h4': 'text-lg lg:text-xl !leading-none mb-4 lg:mb-5',
       'h5': 'text-lg lg:text-lg !leading-none mb-3 lg:mb-4',
       'h6': 'text-sm lg:text-base leading-tight mb-3 lg:mb-5',
-      'p': 'leading-relaxed text-[14px] mb-5 lg:mb-8',
+      'p': 'leading-relaxed text-[14px] mb-3 lg:mb-5',
       'span': '',
     },
     size: {
