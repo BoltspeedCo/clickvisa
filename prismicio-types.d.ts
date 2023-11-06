@@ -2242,6 +2242,16 @@ export type StepsSlice = prismic.SharedSlice<"steps", StepsSliceVariation>;
  */
 export interface SubservicesSliceDefaultPrimary {
   /**
+   * heading field in *Subservices → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: subservices.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
    * button text field in *Subservices → Primary*
    *
    * - **Field Type**: Text

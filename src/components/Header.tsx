@@ -11,9 +11,10 @@ import { ScrollArea } from "./ui/Scroll-area";
 import Link from "next/link";
 
 type HeaderProps = {
-    headerMenu: SliceZone<NavigationItemSlice>
+    headerMenuItems: SliceZone<NavigationItemSlice>
+    headerMenu?: React.ReactNode
 }
-export function Header({ headerMenu }: HeaderProps) {
+export function Header({ headerMenuItems, headerMenu }: HeaderProps) {
     const [menuOpen, setMenuOpen] = React.useState(false)
     const bodyRef = React.useRef<HTMLBodyElement | null>(null);
     useEffect(() => {
@@ -40,22 +41,27 @@ export function Header({ headerMenu }: HeaderProps) {
                     </Link>
                 </div>
                 <nav className="hidden md:flex gap-6 lg:gap-12 items-center">
-                    {headerMenu.map((menu, index) => {
-                        const {
-                            link,
-                            name,
-                            asButton
-                        } = menu.primary;
-                        return <div className="" key={index}>
-                            {isFilled.link(link) && isFilled.keyText(name) ? <>
-                                {asButton ? <ButtonLink href={link.url || ''} variant={'fill'} size="sm" className="mx-2">
-                                    {name}
-                                </ButtonLink> : <AnimatedLink href={link.url || ''}>
-                                    {name}
-                                </AnimatedLink>}
-                            </> : null}
-                        </div>;
-                    })}
+                    {headerMenu ? headerMenu : (
+                        <>
+                            {headerMenuItems.map((menu, index) => {
+                                const {
+                                    link,
+                                    name,
+                                    asButton
+                                } = menu.primary;
+                                return <div className="" key={index}>
+                                    {isFilled.link(link) && isFilled.keyText(name) ? <>
+                                        {asButton ? <ButtonLink href={link.url || ''} variant={'fill'} size="sm" className="mx-2">
+                                            {name}
+                                        </ButtonLink> : <AnimatedLink href={link.url || ''}>
+                                            {name}
+                                        </AnimatedLink>}
+                                    </> : null}
+                                </div>;
+                            })}
+                        </>
+                    )}
+
 
                 </nav>
                 <div className="md:hidden -mr-4">
@@ -73,39 +79,44 @@ export function Header({ headerMenu }: HeaderProps) {
                 <div className="fixed z-50 bg-muted h-[calc(100%-56px)] w-full top-14 left-0">
                     <ScrollArea className="w-full h-full">
                         <nav className="space-y-5 p-6">
-                            {headerMenu.map((menu, index) => {
-                                const {
-                                    link,
-                                    name,
-                                    asButton
-                                } = menu.primary;
-                                const submenu = menu.items
-                                return <div className="" key={index}>
-                                    {isFilled.link(link) && isFilled.keyText(name) ? <>
-                                        {asButton ? <ButtonLink href={link.url || ''} variant={'fill'} size="sm" className="mt-3">
-                                            {name}
-                                        </ButtonLink> : <AnimatedLink href={link.url || ''} className="block py-2 uppercase">
-                                            {name}
-                                        </AnimatedLink>}
-                                    </> : null}
-                                    {submenu && submenu.length > 0 ? (
-                                        <div className="space-y-4">
-                                            {submenu.map((submenuItem, index) => {
-                                                const { childName, childLink } = submenuItem
-                                                return (
-                                                    <>
-                                                        {isFilled.link(childLink) && isFilled.keyText(childName) ? <>
-                                                            <AnimatedLink href={childLink.url || ''} className="block text-sm uppercase relative py-2 pl-8 before:content-[''] before:block before:h-px before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:bg-foreground before:w-6">
-                                                                {childName}
-                                                            </AnimatedLink>
-                                                        </> : null}
-                                                    </>
-                                                )
-                                            })}
-                                        </div>
-                                    ) : null}
-                                </div>;
-                            })}
+                            {headerMenu ? headerMenu : (
+                                <>
+                                    {headerMenuItems.map((menu, index) => {
+                                        const {
+                                            link,
+                                            name,
+                                            asButton
+                                        } = menu.primary;
+                                        const submenu = menu.items
+                                        return <div className="" key={index}>
+                                            {isFilled.link(link) && isFilled.keyText(name) ? <>
+                                                {asButton ? <ButtonLink href={link.url || ''} variant={'fill'} size="sm" className="mt-3">
+                                                    {name}
+                                                </ButtonLink> : <AnimatedLink href={link.url || ''} className="block py-2 uppercase">
+                                                    {name}
+                                                </AnimatedLink>}
+                                            </> : null}
+                                            {submenu && submenu.length > 0 ? (
+                                                <div className="space-y-4">
+                                                    {submenu.map((submenuItem, index) => {
+                                                        const { childName, childLink } = submenuItem
+                                                        return (
+                                                            <>
+                                                                {isFilled.link(childLink) && isFilled.keyText(childName) ? <>
+                                                                    <AnimatedLink href={childLink.url || ''} className="block text-sm uppercase relative py-2 pl-8 before:content-[''] before:block before:h-px before:absolute before:top-1/2 before:-translate-y-1/2 before:left-0 before:bg-foreground before:w-6">
+                                                                        {childName}
+                                                                    </AnimatedLink>
+                                                                </> : null}
+                                                            </>
+                                                        )
+                                                    })}
+                                                </div>
+                                            ) : null}
+                                        </div>;
+                                    })}
+                                </>
+                            )}
+
 
                         </nav>
                     </ScrollArea>

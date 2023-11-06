@@ -7,6 +7,8 @@ import { notFound, } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { websiteConfig } from '@/config';
 import { isFilled } from '@prismicio/client';
+import Head from 'next/head';
+import { ButtonLink } from '@/components/ui/Button';
 
 
 export async function generateMetadata({ params }: { params: { uid: string } }): Promise<Metadata> {
@@ -37,7 +39,14 @@ export default async function Pages({ params }: { params: { uid: string } }) {
   const settings = await client.getSingle('settings')
   // console.log("page", page)
   return (
-    <RootLayout settings={settings} globalContext={globalSections}>
+    <RootLayout noFooter headerMenu={(
+      <ButtonLink href={'#contact'} variant={'fill'} size="sm" className="mx-2">
+        Contact Us
+      </ButtonLink>
+    )} settings={settings} globalContext={globalSections}>
+      <Head>
+
+      </Head>
       <SliceZone slices={page.data.slices} components={components} context={{
         globalSections: globalSections
       }} />

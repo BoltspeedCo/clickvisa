@@ -63,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             animate('.text-child-top', {
               y: -16,
             }, {
-              delay: staggerMenuText
+              delay: staggerMenuText,
             })
             animate('.text-child-bottom', {
               y: -16,

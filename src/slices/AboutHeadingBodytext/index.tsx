@@ -26,7 +26,9 @@ const AboutHeadingBodytext = ({
     >
       <Container>
         <SmartText text={heading} variant="h2" className="  mb-10 md:mb-12 lg:mb-16 xl:mb-20 max-w-2xl" />
-        <SmartText text={bodyText} variant="p" className="text-justify md:columns-2 gap-10 lg:gap-16" />
+        <div className="md:columns-2 gap-10  md:gap-16">
+          <SmartText text={bodyText} variant="p" className="text-justify " />
+        </div>
 
       </Container>
 

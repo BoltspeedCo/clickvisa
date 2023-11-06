@@ -5,7 +5,7 @@ import Typography, { SmartText } from "@/components/Typography";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 
 /**
@@ -40,10 +40,15 @@ const AboutImage = ({ slice }: AboutImageProps): JSX.Element => {
           )}>
             <div className="">
               <SmartText text={heading} variant="h2" className=" text-left" />
-              <SmartText text={bodyText} variant="p" className="max-w-md text-justify" />
+              {isFilled.richText(bodyText) ? (
+                <div className="prose prose-sm  prose-p:text-[15px] text-justify leading-snug">
+                  <PrismicRichText field={bodyText} />
+                </div>
+              ) : null}
+              {/* <SmartText text={bodyText} variant="p" className="max-w-md text-justify" /> */}
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full mt-8 lg:mt-12">
-                  <Button className="" variant={'fill-dark'}  >
+                  <Button className="" variant={'fill-dark'} size="lg" >
                     {buttonText}
                   </Button>
                 </div>

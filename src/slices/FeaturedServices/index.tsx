@@ -51,7 +51,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
                       <SmartText text={name} variant="h4" size="h5" className="font-bold mb-3 lg:mb-4 capitalize" />
                       <SmartText text={featuredDescription} variant="p" className="mb-0 lg:mb-0 text-justify" />
                       <div className="mt-auto">
-                        <ButtonLink href={`services/${uid}`} className="mt-4 md:mt-6 lg:mt-10 xl:mt-14">
+                        <ButtonLink href={`/contact-us`} className="mt-4 md:mt-6 lg:mt-10 xl:mt-14">
                           Learn More
                         </ButtonLink>
                       </div>

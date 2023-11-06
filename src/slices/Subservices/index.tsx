@@ -2,7 +2,8 @@ import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { SmartText } from "@/components/Typography";
 import { Button } from "@/components/ui/Button";
-import { Content } from "@prismicio/client";
+import { cn } from "@/lib/utils";
+import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -14,6 +15,7 @@ export type SubservicesProps = SliceComponentProps<Content.SubservicesSlice>;
  * Component for "Subservices" Slices.
  */
 const Subservices = ({ slice }: SubservicesProps): JSX.Element => {
+  const { heading, buttonLink, buttonText } = slice.primary
   const subservices = slice.items
   return (
     <Section
@@ -23,6 +25,9 @@ const Subservices = ({ slice }: SubservicesProps): JSX.Element => {
       className="pb-6 lg:pb-16"
     >
       <Container size="wide">
+        <div className="">
+          <SmartText text={heading} variant="h2" className="text-center uppercase mb-12 md:mb-16 lg:mb-20 xl:mb-32" />
+        </div>
         <div className="flex flex-wrap justify-between -mx-6 lg:-mx-12">
           {subservices.map((subservice, index) => {
             const { heading, description } = subservice
@@ -31,7 +36,10 @@ const Subservices = ({ slice }: SubservicesProps): JSX.Element => {
                 <SmartText text={heading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-5" />
                 <SmartText text={description} variant="p" className="mb-0 lg:mb-0 text-justify" />
                 <div className="mt-auto">
-                  <Button className="mt-4 md:mt-6 lg:mt-10 xl:mt-14">
+                  <Button className={cn(
+                    "",
+                    isFilled.richText(description) ? "mt-4 md:mt-6 lg:mt-10 xl:mt-14" : "mt-3 md:mt-4 lg:mt-4 xl:mt-6"
+                  )}>
                     Contact Us
                   </Button>
                 </div>
