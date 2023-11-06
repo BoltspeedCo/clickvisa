@@ -32,8 +32,8 @@ export function Header({ headerMenuItems, headerMenu }: HeaderProps) {
             bodyRef.current.classList.toggle('overflow-hidden')
         }
     }
-    return (<header className="sticky top-0 bg-background z-50">
-        <Container size="wide" className="py-2 lg:py-4">
+    return (<header className="sticky top-0 bg-background z-50 border-b border-muted">
+        <Container className="py-2 lg:py-4">
             <div className="flex justify-between items-center">
                 <div className="">
                     <Link href="/" className="block w-fit py-2 md:py-1">

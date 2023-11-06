@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { SliceZoneContext } from "@/custom";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
@@ -37,8 +37,8 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Container size="wide" className="">
-        <div className="-mx-4 md:mx-0 bg-foreground relative overflow-hidden">
+      <Container className="">
+        <div className="-mx-4 md:-mx-8 bg-foreground relative overflow-hidden">
           <div className="absolute w-full md:w-2/3 lg:w-7/12 right-0 h-[150px] md:h-full bottom-0 md:top-0 overflow-hidden">
             <Image src={'/images/cta-bg.png'} alt={'cta-background'} className="left-0 w-full h-full object-right-center lg:object-right-center object-cover relative grayscale" width={1000} height={1000} />
 
@@ -53,11 +53,12 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
               <SmartText text={bodyText} variant="p" className="" />
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full ">
-                  <Button className="text-background bg-transparent border-background"  >
+                  <ButtonLink href={buttonLink.url || ''} className="text-background bg-transparent border-background"  >
                     {buttonText}
-                  </Button>
+                  </ButtonLink>
                 </div>
               ) : null}
+
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }:
       ) : (
         <footer className="pt-20 pb-8 lg:pb-20 lg:pt-40 relative">
 
-          <Container size="wide">
+          <Container >
             <div className="flex justify-between flex-wrap lg:gap-20 xl:gap-32">
               <div className="w-full lg:w-1/2 mb-16 lg:mb-0">
                 <SmartText text={footerHeading} variant="h2" className="text-3xl lg:text-4xl xl:text-5xl max-w-xl" />

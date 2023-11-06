@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Typography, { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -40,11 +40,12 @@ const Advantage = ({ slice }: AdvantageProps): JSX.Element => {
           })}
           {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
             <div className="w-full h-full flex flex-col justify-end items-start">
-              <Button  >
+              <ButtonLink href={buttonLink.url || ''} className=""  >
                 {buttonText}
-              </Button>
+              </ButtonLink>
             </div>
           ) : null}
+
         </div>
       </Container>
     </Section>

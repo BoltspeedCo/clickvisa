@@ -22,7 +22,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
       name="featured-services"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-6 lg:pb-16"
+      className="pb-2 lg:pb-8"
     >
       <Container size="wide">
         <SmartText text={heading} variant="h2" className="text-center uppercase mb-12 md:mb-16 lg:mb-20 xl:mb-32" />
@@ -39,7 +39,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
               if (!data) return
               const { featuredDescription, featuredIcon, name } = data
               return (
-                <div className="w-full md:w-1/2 lg:w-1/3 md:max-w-md px-6 lg:px-12 mb-8 md:mb-12 lg:mb-12 xl:mb-16" key={index}>
+                <div className="w-full md:w-1/2 lg:w-1/3 md:max-w-md px-6 lg:px-12 mb-8 md:mb-12 lg:mb-20 xl:mb-24" key={index}>
                   <div className="flex flex-wrap gap-4 lg:gap-6 xl:gap-8 h-full">
                     {isFilled.image(featuredIcon) ? (
                       <div className="md:pt-2">
@@ -51,7 +51,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
                       <SmartText text={name} variant="h4" size="h5" className="font-bold mb-3 lg:mb-4 capitalize" />
                       <SmartText text={featuredDescription} variant="p" className="mb-0 lg:mb-0 text-justify" />
                       <div className="mt-auto">
-                        <ButtonLink href={`/contact-us`} className="mt-4 md:mt-6 lg:mt-10 xl:mt-14">
+                        <ButtonLink href={`/contact-us`} className="mt-4 md:mt-6 lg:mt-10 xl:mt-12">
                           Learn More
                         </ButtonLink>
                       </div>

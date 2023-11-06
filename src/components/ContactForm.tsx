@@ -10,11 +10,22 @@ import { Input } from './ui/Input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/Select';
 import { Link } from 'lucide-react';
 import { Textarea } from './ui/Textarea';
+import { kebabCase } from 'change-case';
 type Props = {
 
 }
 const FORMSPARK_FORM_ID = "H7AMrmTH";
-
+const services = [
+    'corporate',
+    'personal',
+    'entertainment',
+    'visa cancellation',
+    'character & health',
+    'appeals & tribunal',
+    'pic, schedule 3 & waivers',
+    'complex matters',
+    'citizenship'
+]
 const formSchema = z.object({
     name: z.string().min(2, { message: "Please enter a valid name" }),
     email: z.string().email({ message: "Please enter a valid email" }),
@@ -96,9 +107,12 @@ const ContactForm = ({ }: Props) => {
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="corporate">corporate</SelectItem>
-                                        <SelectItem value="personal">personal</SelectItem>
-                                        <SelectItem value="entertainment">entertainment</SelectItem>
+                                        {services.map((service, index) => {
+                                            return (
+                                                <SelectItem value={kebabCase(service)} key={index}>{service}</SelectItem>
+                                            )
+                                        })}
+
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
