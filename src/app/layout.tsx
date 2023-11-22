@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { PrismicPreview } from '@prismicio/next'
+import { repositoryName } from '@/prismicio'
 
 
 
@@ -15,7 +17,8 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body >{children} <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   )
 }
