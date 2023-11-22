@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Typography, { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
@@ -39,9 +39,9 @@ const LpHero = ({ slice }: LpHeroProps): JSX.Element => {
           <SmartText text={bodyText} variant="p" className="text-base max-w-md" />
           {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
             <div className="w-full h-full ">
-              <Button className="" variant={'fill-dark'} size="lg" >
+              <ButtonLink href={buttonLink.url || ""} className="" variant={'fill-dark'} size="lg" >
                 {buttonText}
-              </Button>
+              </ButtonLink>
             </div>
           ) : null}
         </div>

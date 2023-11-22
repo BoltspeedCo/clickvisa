@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { ComponentPropsWithoutRef } from "react";
@@ -60,9 +60,9 @@ const Benefits = ({ slice }: BenefitsProps): JSX.Element => {
         ) : null}
         {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
           <div className="w-full h-full mt-8 lg:mt-12 text-center">
-            <Button className="" variant={'fill-dark'} size="lg"  >
+            <ButtonLink href={buttonLink.url || ''} className="" variant={'fill-dark'} size="lg"  >
               {buttonText}
-            </Button>
+            </ButtonLink>
           </div>
         ) : null}
       </Container>

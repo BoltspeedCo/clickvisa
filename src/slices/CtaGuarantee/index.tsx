@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -49,9 +49,9 @@ const CtaGuarantee = ({ slice }: CtaGuaranteeProps): JSX.Element => {
           <div className="w-full lg:w-1/3 px-6 lg:px-12 mt-6 lg:mt-0">
             {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
               <div className="w-full h-full text-center">
-                <Button className="bg-background text-foreground hover:bg-background/90" variant={'fill'} size="lg"  >
+                <ButtonLink href={buttonLink.url || ''} className="bg-background text-foreground hover:bg-background/90" variant={'fill'} size="lg"  >
                   {buttonText}
-                </Button>
+                </ButtonLink>
               </div>
             ) : null}
           </div>

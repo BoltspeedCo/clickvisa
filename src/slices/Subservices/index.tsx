@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
@@ -36,12 +36,12 @@ const Subservices = ({ slice }: SubservicesProps): JSX.Element => {
                 <SmartText text={heading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-5" />
                 <SmartText text={description} variant="p" className="mb-0 lg:mb-0 text-justify" />
                 <div className="mt-auto">
-                  <Button className={cn(
+                  <ButtonLink href={isFilled.link(buttonLink) ? buttonLink.url || '' : ''} className={cn(
                     "",
                     isFilled.richText(description) ? "mt-4 md:mt-6 lg:mt-10 xl:mt-14" : "mt-3 md:mt-4 lg:mt-4 xl:mt-6"
                   )}>
                     Contact Us
-                  </Button>
+                  </ButtonLink>
                 </div>
               </div>
             )

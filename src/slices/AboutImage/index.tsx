@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import CountUp from "@/components/CountUp";
 import Section from "@/components/Section";
 import Typography, { SmartText } from "@/components/Typography";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -48,9 +48,9 @@ const AboutImage = ({ slice }: AboutImageProps): JSX.Element => {
               {/* <SmartText text={bodyText} variant="p" className="max-w-md text-justify" /> */}
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full mt-8 lg:mt-12">
-                  <Button className="" variant={'fill-dark'} size="lg" >
+                  <ButtonLink href={buttonLink.url || ''} className="" variant={'fill-dark'} size="lg" >
                     {buttonText}
-                  </Button>
+                  </ButtonLink>
                 </div>
               ) : null}
             </div>
