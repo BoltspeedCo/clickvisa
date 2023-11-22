@@ -44,9 +44,7 @@ export default async function Pages({ params }: { params: { uid: string } }) {
         Contact Us
       </ButtonLink>
     )} settings={settings} globalContext={globalSections}>
-      <Head>
 
-      </Head>
       <SliceZone slices={page.data.slices} components={components} context={{
         globalSections: globalSections
       }} />
