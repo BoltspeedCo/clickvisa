@@ -1,7 +1,11 @@
 import Section from "@/components/Section";
+import VideoPlayer from "@/components/VideoPlayer";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
+import dynamic from 'next/dynamic'
+
+const DynamicVideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false })
 
 /**
  * Props for `Hero`.
@@ -12,7 +16,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
-  const { image } = slice.primary
+  const { image, video } = slice.primary
   return (
     <Section
       name="hero"
@@ -20,11 +24,19 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="py-0 lg:py-0"
     >
-      {isFilled.image(image) ? (
+      {isFilled.image(image) && !isFilled.link(video) ? (
         <Image src={image.url} alt={image.alt || ''} priority width={image.dimensions.width} height={image.dimensions.height}
           className="w-full  h-[450px] lg:h-[680px] object-cover object-center "
         />
       ) : null}
+      {isFilled.link(video) && video.url ? (
+        <div className="w-full  h-[450px] lg:h-[680px] object-cover object-center relative overflow-hidden">
+          <div className="absolute w-full  -top-[40px] h-[530px] lg:h-[760px]">
+            <DynamicVideoPlayer url={video.url} playing playsinline style={{ objectFit: 'cover' }} muted width={'100%'} height={'100%'} controls={false} />
+          </div>
+        </div>
+      ) : null}
+
     </Section>
   );
 };

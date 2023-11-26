@@ -32,6 +32,15 @@
               "service"
             ]
           }
+        },
+        "buttonLink": {
+          "type": "Link",
+          "config": {
+            "label": "button link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
         }
       }
     }

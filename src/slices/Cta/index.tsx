@@ -46,14 +46,14 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
           <div className="absolute w-full md:w-2/3 lg:w-7/12 h-[150px] md:h-full bottom-0 md:top-0 right-0  bg-radial-gradient-foreground">
 
           </div>
-          <div className="max-w-5xl mx-auto relative">
-            <div className=" max-w-lg  text-background pt-12 pb-28 p-6 md:p-8 lg:p-12 xl:p-16 text-left md:text-center flex flex-col md:items-center">
+          <div className="max-w-6xl mx-auto relative">
+            <div className=" max-w-xl  text-background pt-12 pb-28 p-6 md:p-8 lg:p-12 xl:p-16 text-left md:text-center flex flex-col md:items-center">
               <SmartText text={preHeading} variant="h5" size="h6" className=" font-normal mb-3 lg:mb-4 capitalize " />
-              <SmartText text={heading} variant="h2" size="h1" className="font-bold uppercase md:max-w-xs mb-5 lg:mb-10" />
+              <SmartText text={heading} variant="h2" size="h1" className="font-bold uppercase md:max-w-lg mb-5 lg:mb-10" />
               <SmartText text={bodyText} variant="p" className="" />
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full ">
-                  <ButtonLink href={buttonLink.url || ''} className="text-background bg-transparent border-background"  >
+                  <ButtonLink href={buttonLink.url || ''} className="text-backghund bg-transparent border-background"  >
                     {buttonText}
                   </ButtonLink>
                 </div>

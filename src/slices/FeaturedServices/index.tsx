@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-import { SmartText } from "@/components/Typography";
+import Typography, { SmartText } from "@/components/Typography";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { Content, FilledContentRelationshipField, ImageField, KeyTextField, RichTextField, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 /**
  * Props for `FeaturedServices`.
@@ -39,7 +39,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
               if (!data) return
               const { featuredDescription, featuredIcon, name } = data
               return (
-                <div className="w-full md:w-1/2 lg:w-1/3 md:max-w-md px-6 lg:px-12 mb-8 md:mb-12 lg:mb-20 xl:mb-24" key={index}>
+                <div className="w-full md:w-1/2 lg:w-1/3 md:max-w-lg px-6 lg:px-12 mb-8 md:mb-12 lg:mb-20 xl:mb-24" key={index}>
                   <div className="flex flex-wrap gap-4 lg:gap-6 xl:gap-8 h-full">
                     {isFilled.image(featuredIcon) ? (
                       <div className="md:pt-2">
@@ -49,7 +49,13 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
                     }
                     <div className="flex-1 flex flex-col" key={index}>
                       <SmartText text={name} variant="h4" size="h5" className="font-bold mb-3 lg:mb-4 capitalize" />
-                      <SmartText text={featuredDescription} variant="p" className="mb-0 lg:mb-0 text-justify" />
+                      <PrismicRichText field={featuredDescription} components={
+                        {
+                          paragraph: ({ children }) => <Typography variant="p" className="mb-0 lg:mb-0 text-justify" >{children}</Typography>,
+                        }
+                      } />
+                      {/* {featuredDescription ? <PrismicRichText field={featuredDescription} /> : null} */
+                      }
                       <div className="mt-auto">
                         <ButtonLink href={`/contact-us`} className="mt-4 md:mt-6 lg:mt-10 xl:mt-12">
                           Learn More

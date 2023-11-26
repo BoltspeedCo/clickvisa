@@ -23,12 +23,12 @@ const Advantage = ({ slice }: AdvantageProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <Container >
-        <div className="mb-12 md:mb-16 lg:mb-24 md:max-w-3xl lg:max-w-2xl">
+        <div className="mb-12 md:mb-16 lg:mb-24 md:max-w-3xl lg:max-w-3xl">
           <SmartText text={heading} variant="h2" className="!mb-0 text-justify md:text-left" />
 
 
         </div>
-        <div className="md:max-w-2xl ml-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-x-28 lg:gap-y-20">
+        <div className="md:max-w-3xl ml-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-x-28 lg:gap-y-20">
           {advantages.map((advantage, index) => {
             const { advantageDescription, advantageHeading } = advantage
             return (

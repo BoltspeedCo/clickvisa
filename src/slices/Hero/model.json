@@ -19,6 +19,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "video": {
+          "type": "Link",
+          "config": {
+            "label": "video",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
         }
       },
       "items": {}

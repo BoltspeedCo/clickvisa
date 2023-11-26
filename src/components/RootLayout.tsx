@@ -49,7 +49,7 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }:
           <Container >
             <div className="flex justify-between flex-wrap lg:gap-20 xl:gap-32">
               <div className="w-full lg:w-1/2 mb-16 lg:mb-0">
-                <SmartText text={footerHeading} variant="h2" className="text-3xl lg:text-4xl xl:text-5xl max-w-xl" />
+                <SmartText text={footerHeading} variant="h2" className="text-2xl lg:text-3xl xl:text-4xl max-w-xl" />
               </div>
               <div className="flex justify-between md:justify-end lg:gap-12 xl:gap-24 w-full md:w-auto">
                 {footerMenu.map((menuGroup, index) => {
