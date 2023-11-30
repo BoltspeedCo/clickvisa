@@ -14,7 +14,7 @@ export type CtaContactProps = SliceComponentProps<Content.CtaContactSlice>;
  * Component for "CtaContact" Slices.
  */
 const CtaContact = ({ slice }: CtaContactProps): JSX.Element => {
-  const { bodyText, heading } = slice.primary
+  const { bodyText, heading, formsparkId } = slice.primary
   return (
     <Section
       id="contact"
@@ -30,7 +30,7 @@ const CtaContact = ({ slice }: CtaContactProps): JSX.Element => {
             <PrismicRichText field={bodyText} />
           </div>
         ) : null}
-        <div className="mt-8 lg:mt-16">        <ContactForm />
+        <div className="mt-8 lg:mt-16">        <ContactForm formsparkId={isFilled.keyText(formsparkId) ? formsparkId : "H7AMrmTH"} />
         </div>
 
       </Container>
