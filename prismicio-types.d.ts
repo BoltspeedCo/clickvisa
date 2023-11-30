@@ -1098,6 +1098,16 @@ export interface ContactInfoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   formHeading: prismic.RichTextField;
+
+  /**
+   * formspark ID field in *ContactInfo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_info.primary.formsparkId
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  formsparkId: prismic.KeyTextField;
 }
 
 /**
@@ -1283,6 +1293,16 @@ export interface CtaContactSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   bodyText: prismic.RichTextField;
+
+  /**
+   * formspark ID field in *CtaContact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_contact.primary.formsparkId
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  formsparkId: prismic.KeyTextField;
 }
 
 /**
@@ -2505,6 +2525,16 @@ export interface TeamPartnersSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   phone: prismic.KeyTextField;
+
+  /**
+   * license field in *TeamPartners → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_partners.items[].license
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  license: prismic.KeyTextField;
 }
 
 /**

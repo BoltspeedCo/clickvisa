@@ -29,7 +29,7 @@ const TeamPartners = ({ slice }: TeamPartnersProps): JSX.Element => {
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-16 lg:gap-32 xl:gap-36">
           {partners.map((person, index) => {
-            const { description, image, name, email, phone, position } = person
+            const { description, image, name, email, phone, position, license } = person
             return (
               <div className="col-span-1 max-w-2xl grid md:grid-cols-1 md:gap-6 lg:gap-8" key={index}>
                 {/* <div className="col-span-7 lg:col-span-3 sm:max-w-[250px]">
@@ -50,6 +50,11 @@ const TeamPartners = ({ slice }: TeamPartnersProps): JSX.Element => {
                       <a href={`tel:${phone}`} className="">
                         <SmartText text={phone} variant="span" className="text-justify text-sm block mb-0 lg:mb-0 underline italic leading-tight " />
                       </a>
+                    ) : null}
+                    {isFilled.keyText(license) ? (
+
+                      <SmartText text={license} variant="span" className="text-justify text-sm block mb-0 lg:mb-0  text-foreground/80 leading-tight " />
+
                     ) : null}
                   </div>
                   <SmartText text={description} variant="p" className="text-justify mb-0 lg:mb-0" />

@@ -44,14 +44,14 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }:
           </Container>
         </footer>
       ) : (
-        <footer className="pt-20 pb-8 lg:pb-20 lg:pt-40 relative">
+        <footer className="pt-20 pb-8 lg:pb-20 lg:pt-28 relative">
 
           <Container >
-            <div className="flex justify-between flex-wrap lg:gap-20 xl:gap-32">
-              <div className="w-full lg:w-1/2 mb-16 lg:mb-0">
+            <div className="flex  flex-wrap lg:gap-20 xl:gap-32">
+              {/* <div className="w-full lg:w-1/2 mb-16 lg:mb-0">
                 <SmartText text={footerHeading} variant="h2" className="text-2xl lg:text-3xl xl:text-4xl max-w-xl" />
-              </div>
-              <div className="flex justify-between md:justify-end lg:gap-12 xl:gap-24 w-full md:w-auto">
+              </div> */}
+              <div className="flex justify-between md:justify-center lg:gap-12 xl:gap-24 w-full ">
                 {footerMenu.map((menuGroup, index) => {
                   const { group_name } = menuGroup.primary
                   const menuItems = menuGroup.items
@@ -79,7 +79,7 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }:
                 })}
               </div>
             </div>
-            <div className="mt-14 lg:mt-24 xl:mt-32 space-y-3 md:space-y-0 text-center md:text-left md:flex flex-wrap justify-between items-end">
+            <div className="mt-14 lg:mt-24 space-y-3 md:space-y-0 text-center md:text-left md:flex flex-wrap justify-between items-end">
               <div className="text-xs">
                 {new Date().getFullYear()} &copy; ClickVisa. All rights reserved.
               </div>

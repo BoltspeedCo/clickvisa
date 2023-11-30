@@ -73,7 +73,7 @@ const Breadcrumbs = ({ }: Props) => {
                         </ol>
                     </nav>
                     <div className="md:col-span-3">
-                        <SmartText text={currentPath.name} variant="h1" size="h5" className="uppercase mb-0 lg:mb-0" />
+                        <SmartText text={currentPath.name} variant="h1" size="h5" className="uppercase font-bold mb-0 lg:mb-0" />
                     </div>
                 </div>
             </Container>

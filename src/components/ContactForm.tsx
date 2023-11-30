@@ -33,13 +33,16 @@ const formSchema = z.object({
     services: z.string().min(2, { message: "Please enter a valid service" }),
     message: z.string().min(10, { message: "Please enter a valid message" }),
 })
-const ContactForm = ({ }: Props) => {
+type ContactFormProps = {
+    formsparkId: string
+}
+const ContactForm = ({ formsparkId }: ContactFormProps) => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
     const { formState, handleSubmit, reset } = form
     const [submit, submitting] = useFormspark({
-        formId: FORMSPARK_FORM_ID,
+        formId: formsparkId,
     });
     const onSubmitHandler = handleSubmit(async (data) => {
         await submit(data)

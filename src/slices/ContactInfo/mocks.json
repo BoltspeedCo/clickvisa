@@ -24,6 +24,11 @@
 						}
 					}
 				]
+			},
+			"formsparkId": {
+				"__TYPE__": "FieldContent",
+				"value": "hidden",
+				"type": "Text"
 			}
 		},
 		"items": [

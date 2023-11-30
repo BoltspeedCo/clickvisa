@@ -30,10 +30,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         />
       ) : null}
       {isFilled.link(video) && video.url ? (
-        <div className="w-full  h-[450px] lg:h-[680px] object-cover object-center relative overflow-hidden">
-          <div className="absolute w-full  -top-[60px] h-[570px] lg:h-[800px]">
-            <DynamicVideoPlayer url={video.url} playing playsinline style={{ objectFit: 'cover' }} loop muted width={'100%'} height={'100%'} controls={false} />
-          </div>
+        <div className="w-full  h-[450px] lg:h-[680px] object-cover object-center relative overflow-hidden video-background">
+          {/* <div className="absolute w-full  -top-[60px] h-[570px] lg:h-[800px]"> */}
+          <DynamicVideoPlayer url={video.url} playing playsinline style={{ objectFit: 'cover' }} loop muted width={'100%'} height={'100%'} controls={false} />
+          {/* </div> */}
         </div>
       ) : null}
 

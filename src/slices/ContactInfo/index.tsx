@@ -15,7 +15,7 @@ export type ContactInfoProps = SliceComponentProps<Content.ContactInfoSlice>;
  * Component for "ContactInfo" Slices.
  */
 const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
-  const { formHeading, heading } = slice.primary
+  const { formHeading, heading, formsparkId } = slice.primary
   const contactInfo = slice.items
   return (
     <Section
@@ -24,28 +24,33 @@ const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <Container>
-        <div className="md:w-7/12 ml-auto">
-          <SmartText text={heading} variant="h2" size="h3" className="  mb-12 md:mb-16 lg:mb-20 xl:mb-32" />
-          <div className="grid md:grid-cols-2 gap-8 md:gap-8 lg:gap-12">
-            {contactInfo.map((item, index) => {
-              const { heading, link, text } = item
-              return (
-                <div key={index}>
-                  <SmartText text={heading} variant={'h5'} size="h6" className="uppercase font-light mb-2 lg:mb-3 text-xs lg:text-sm" />
-                  {isFilled.link(link) ? (
-                    <Link href={link.url || ''} className="inline-block">
-                      <SmartText text={text} variant="p" className="mb-0 lg:mb-0 text-base lg:text-lg !leading-tight italic underline" />
-                    </Link>
-                  ) : <SmartText text={text} variant="p" className="mb-0 inline-block lg:mb-0 text-base lg:text-lg !leading-tight italic" />
-                  }
-                </div>
-              )
-            })}
+        <div className="flex flex-wrap -mx-6 md:-mx-12">
+          <div className="md:w-6/12 px-6 md:px-12">
+            <SmartText text={heading} variant="h2" size="h3" className="  mb-12 md:mb-16 md:w-3/4" />
+            <div className="grid gap-5 md:gap-6 lg:gap-8">
+              {contactInfo.map((item, index) => {
+                const { heading, link, text } = item
+                return (
+                  <div key={index}>
+                    <SmartText text={heading} variant={'h5'} size="h6" className="uppercase font-light mb-2 lg:mb-3 text-xs lg:text-sm" />
+                    {isFilled.link(link) ? (
+                      <Link href={link.url || ''} className="inline-block">
+                        <SmartText text={text} variant="p" className="mb-0 lg:mb-0 text-base lg:text-lg !leading-tight italic underline" />
+                      </Link>
+                    ) : <SmartText text={text} variant="p" className="mb-0 inline-block lg:mb-0 text-base lg:text-lg !leading-tight italic" />
+                    }
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
-        <div className="mt-24 lg:mt-48 md:w-7/12 ml-auto">
-          <SmartText text={formHeading} variant="h2" size="h3" className="  mb-10 md:mb-12 lg:mb-14 xl:mb-20" />
-          <ContactForm />
+          <div className="md:w-6/12 px-6 md:px-12">
+            <div className="mt-24 lg:mt-0 ">
+              <SmartText text={formHeading} variant="h2" size="h3" className="  mb-10 md:mb-12 lg:mb-14 xl:mb-20" />
+              <ContactForm formsparkId={isFilled.keyText(formsparkId) ? formsparkId : "H7AMrmTH"} />
+            </div>
+          </div>
+
         </div>
       </Container>
 

@@ -29,6 +29,13 @@
             "allowTargetBlank": true,
             "multi": "paragraph,heading4,strong,o-list-item,list-item,hyperlink,em"
           }
+        },
+        "formsparkId": {
+          "type": "Text",
+          "config": {
+            "label": "formspark ID",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

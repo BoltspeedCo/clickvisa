@@ -96,6 +96,14 @@
 							"value": "door",
 							"type": "Text"
 						}
+					],
+					[
+						"license",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "pen",
+							"type": "Text"
+						}
 					]
 				]
 			}

@@ -69,6 +69,13 @@
             "label": "phone",
             "placeholder": ""
           }
+        },
+        "license": {
+          "type": "Text",
+          "config": {
+            "label": "license",
+            "placeholder": ""
+          }
         }
       }
     }

@@ -36,7 +36,7 @@ const ServicesLists = ({ slice }: ServicesListsProps): JSX.Element => {
             const { name, featuredIcon } = serviceData
             return (
               <div className="w-1/2 md:w-1/3 px-4 lg:px-8 max-w-xs mb-4 md:mb-7" key="index">
-                <Link href={'/contact-us'} className="flex gap-2 lg:gap-4 xl:gap-6 items-center py-4 md:pb-5 border-b border-muted">
+                <Link href={'/services'} className="flex gap-2 lg:gap-4 xl:gap-6 items-center py-4 md:pb-5 border-b border-muted">
                   <div className="shrink-0">
                     {isFilled.image(featuredIcon) ? (
                       <Image src={featuredIcon.url} alt={featuredIcon.alt || ''} className="h-6 lg:h-8 w-6 lg:w-8 object-contain" width={featuredIcon.dimensions.width} height={featuredIcon.dimensions.height} />

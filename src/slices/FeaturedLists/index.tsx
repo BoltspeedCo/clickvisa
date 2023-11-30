@@ -30,7 +30,7 @@ const FeaturedLists = ({ slice }: FeaturedListsProps): JSX.Element => {
               <div className="" key={index}>
                 <div className="grid md:grid-cols-5 md:gap-2 lg:gap-2 ">
                   <div className=" md:col-span-2 pt-2 md:pl-12 lg:pl-16">
-                    <SmartText text={heading} variant="h3" size="h5" className="mb-3" />
+                    <SmartText text={heading} variant="h3" size="h5" className="mb-3 font-bold" />
                   </div>
 
                   <div className=" md:col-span-3 md:pr-8 lg:pr-16">

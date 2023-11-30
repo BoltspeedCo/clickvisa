@@ -24,6 +24,11 @@
 						}
 					}
 				]
+			},
+			"formsparkId": {
+				"__TYPE__": "FieldContent",
+				"value": "rope",
+				"type": "Text"
 			}
 		},
 		"items": []

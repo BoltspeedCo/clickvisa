@@ -47,9 +47,9 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
 
           </div>
           <div className="max-w-6xl mx-auto relative">
-            <div className=" max-w-xl  text-background pt-12 pb-28 p-6 md:p-8 lg:p-12 xl:p-16 text-left md:text-center flex flex-col md:items-center">
+            <div className=" max-w-3xl  text-background pt-12 pb-28 p-6 md:p-8 lg:p-12 xl:p-16 text-left md:text-center flex flex-col md:items-center">
               <SmartText text={preHeading} variant="h5" size="h6" className=" font-normal mb-3 lg:mb-4 capitalize " />
-              <SmartText text={heading} variant="h2" size="h1" className="font-bold uppercase md:max-w-lg mb-5 lg:mb-10" />
+              <SmartText text={heading} variant="h2" size="h2" className="font-medium  md:max-w-xl mb-5 lg:mb-10" />
               <SmartText text={bodyText} variant="p" className="" />
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full ">
