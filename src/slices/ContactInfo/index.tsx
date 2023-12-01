@@ -26,7 +26,7 @@ const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
       <Container>
         <div className="flex flex-wrap -mx-6 md:-mx-12">
           <div className="md:w-6/12 px-6 md:px-12">
-            <SmartText text={heading} variant="h2" size="h3" className="  mb-12 md:mb-16 md:w-3/4" />
+            <SmartText text={heading} variant="h2" size="h3" className="  mb-12 lg:mb-16 md:w-3/4" />
             <div className="grid gap-5 md:gap-6 lg:gap-8">
               {contactInfo.map((item, index) => {
                 const { heading, link, text } = item

@@ -2114,12 +2114,12 @@ export interface ServicesListsSliceDefaultPrimary {
   /**
    * heading field in *ServicesLists → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: services_lists.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.TitleField;
+  heading: prismic.RichTextField;
 }
 
 /**

@@ -24,7 +24,8 @@ const services = [
     'appeals & tribunal',
     'pic, schedule 3 & waivers',
     'complex matters',
-    'citizenship'
+    'citizenship',
+    'other'
 ]
 const formSchema = z.object({
     name: z.string().min(2, { message: "Please enter a valid name" }),
