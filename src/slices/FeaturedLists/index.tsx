@@ -34,7 +34,7 @@ const FeaturedLists = ({ slice }: FeaturedListsProps): JSX.Element => {
                   </div>
 
                   <div className=" md:col-span-3 md:pr-8 lg:pr-16">
-                    <SmartText text={description} variant="p" size="h4" className="text-justify mb-0 lg:mb-0" />
+                    <SmartText text={description} variant="p" size="h4" className=" mb-0 lg:mb-0" />
                   </div>
                 </div>
               </div>

@@ -25,17 +25,17 @@ const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
     >
       <Container>
         <div className="flex flex-wrap -mx-6 md:-mx-12">
-          <div className="md:w-6/12 px-6 md:px-12">
+          <div className="w-full md:w-6/12 px-6 md:px-12">
             <SmartText text={heading} variant="h2" size="h3" className="  mb-12 lg:mb-16 md:w-3/4" />
             <div className="grid gap-5 md:gap-6 lg:gap-8">
               {contactInfo.map((item, index) => {
                 const { heading, link, text } = item
                 return (
                   <div key={index}>
-                    <SmartText text={heading} variant={'h5'} size="h6" className="uppercase font-light mb-2 lg:mb-3 text-xs lg:text-sm" />
+                    <SmartText text={heading} variant={'h5'} size="h6" className="capitalize font-bold mb-2 lg:mb-3 text-xs lg:text-sm" />
                     {isFilled.link(link) ? (
                       <Link href={link.url || ''} className="inline-block">
-                        <SmartText text={text} variant="p" className="mb-0 lg:mb-0 text-base lg:text-lg !leading-tight italic underline" />
+                        <SmartText text={text} variant="p" className="mb-0 lg:mb-0 text-base lg:text-lg !leading-tight hover:underline " />
                       </Link>
                     ) : <SmartText text={text} variant="p" className="mb-0 inline-block lg:mb-0 text-base lg:text-lg !leading-tight italic" />
                     }
@@ -44,7 +44,7 @@ const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
               })}
             </div>
           </div>
-          <div className="md:w-6/12 px-6 md:px-12">
+          <div className="w-full md:w-6/12 px-6 md:px-12">
             <div className="mt-24 lg:mt-0 ">
               <SmartText text={formHeading} variant="h2" size="h3" className="  mb-10 md:mb-12 lg:mb-14 xl:mb-20" />
               <ContactForm formsparkId={isFilled.keyText(formsparkId) ? formsparkId : "H7AMrmTH"} />

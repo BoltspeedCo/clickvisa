@@ -41,11 +41,11 @@ const AboutImage = ({ slice }: AboutImageProps): JSX.Element => {
             <div className="">
               <SmartText text={heading} variant="h2" className=" text-left" />
               {isFilled.richText(bodyText) ? (
-                <div className="prose prose-sm  prose-p:text-[15px] text-justify leading-snug">
+                <div className="prose prose-sm  prose-p:text-[15px]  leading-snug">
                   <PrismicRichText field={bodyText} />
                 </div>
               ) : null}
-              {/* <SmartText text={bodyText} variant="p" className="max-w-md text-justify" /> */}
+              {/* <SmartText text={bodyText} variant="p" className="max-w-md " /> */}
               {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
                 <div className="w-full h-full mt-8 lg:mt-12">
                   <ButtonLink href={buttonLink.url || ''} className="" variant={'fill-dark'} size="lg" >
@@ -84,7 +84,7 @@ const AboutImage = ({ slice }: AboutImageProps): JSX.Element => {
                     <SmartText text={withStatsPrimary.statsCaption} variant="p" className="text-sm mb-0 lg:mb-0 font-normal" />
                   </div>
                   <div className="mt-2 lg:mt-3">
-                    <SmartText text={withStatsPrimary.imageCaption} variant="p" className="max-w-md text-justify mb-0 lg:mb-0" />
+                    <SmartText text={withStatsPrimary.imageCaption} variant="p" className="max-w-md  mb-0 lg:mb-0" />
                   </div>
                 </>) : null}
             </div>

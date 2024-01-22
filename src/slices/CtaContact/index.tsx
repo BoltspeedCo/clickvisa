@@ -26,7 +26,7 @@ const CtaContact = ({ slice }: CtaContactProps): JSX.Element => {
       <Container size="small">
         <SmartText text={heading} variant="h2" className="text-center uppercase mb-8 md:mb-8 lg:mb-12 xl:mb-16" />
         {isFilled.richText(bodyText) ? (
-          <div className="prose prose-sm mx-auto prose-p:text-[15px] prose-li:leading-snug text-justify">
+          <div className="prose prose-sm mx-auto prose-p:text-[15px] prose-li:leading-snug ">
             <PrismicRichText field={bodyText} />
           </div>
         ) : null}

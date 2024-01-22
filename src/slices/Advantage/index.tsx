@@ -24,7 +24,7 @@ const Advantage = ({ slice }: AdvantageProps): JSX.Element => {
     >
       <Container >
         <div className="mb-12 md:mb-16 lg:mb-24 md:max-w-3xl lg:max-w-3xl">
-          <SmartText text={heading} variant="h2" className="!mb-0 text-justify md:text-left" />
+          <SmartText text={heading} variant="h2" className="!mb-0  md:text-left" />
 
 
         </div>
@@ -34,7 +34,7 @@ const Advantage = ({ slice }: AdvantageProps): JSX.Element => {
             return (
               <div className="col-span-1" key={index}>
                 <SmartText text={advantageHeading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-5" />
-                <SmartText text={advantageDescription} variant="p" className="mb-0 lg:mb-0 text-justify" />
+                <SmartText text={advantageDescription} variant="p" className="mb-0 lg:mb-0  " />
               </div>
             )
           })}

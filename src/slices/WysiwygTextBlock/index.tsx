@@ -24,7 +24,7 @@ const WysiwygTextBlock = ({ slice }: WysiwygTextBlockProps): JSX.Element => {
     >
       <Container>
         {isFilled.richText(textBlock) ? (
-          <div className="prose prose-sm   prose-li:leading-snug leading-snug text-justify max-w-full">
+          <div className="prose prose-sm   prose-li:leading-snug leading-snug  max-w-full">
             <PrismicRichText field={textBlock} />
           </div>
         ) : null}

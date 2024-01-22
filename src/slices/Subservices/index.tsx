@@ -34,7 +34,7 @@ const Subservices = ({ slice }: SubservicesProps): JSX.Element => {
             return (
               <div className="w-full md:w-1/2 lg:w-1/3 md:max-w-md px-6 lg:px-12 mb-8 md:mb-12 lg:mb-12 xl:mb-16" key={index}>
                 <SmartText text={heading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-5" />
-                <SmartText text={description} variant="p" className="mb-0 lg:mb-0 text-justify" />
+                <SmartText text={description} variant="p" className="mb-0 lg:mb-0 " />
                 <div className="mt-auto">
                   <ButtonLink href={isFilled.link(buttonLink) ? buttonLink.url || '' : ''} className={cn(
                     "",

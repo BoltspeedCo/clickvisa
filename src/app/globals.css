@@ -113,7 +113,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground scroll-smooth;
+    @apply bg-background text-foreground scroll-smooth leading-snug;
   }
 }
 

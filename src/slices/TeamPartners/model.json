@@ -46,7 +46,7 @@
             "label": "description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "multi": "paragraph"
           }
         },
         "position": {
@@ -75,6 +75,15 @@
           "config": {
             "label": "license",
             "placeholder": ""
+          }
+        },
+        "quote": {
+          "type": "StructuredText",
+          "config": {
+            "label": "quote",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
           }
         }
       }

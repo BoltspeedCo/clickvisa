@@ -2535,6 +2535,16 @@ export interface TeamPartnersSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   license: prismic.KeyTextField;
+
+  /**
+   * quote field in *TeamPartners → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_partners.items[].quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
 }
 
 /**

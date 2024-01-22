@@ -5,7 +5,7 @@ import Container from "./Container";
 // import Footer from "./Footer";
 // import Header from "./Header";
 import Image from 'next/image'
-import { GlobalSectionsDocument, SettingsDocument } from "../../prismicio-types";
+import { GlobalSectionsDocument, ServiceDocument, SettingsDocument } from "../../prismicio-types";
 import { SmartText } from "./Typography";
 import { isFilled } from "@prismicio/client";
 import Link from "next/link";
@@ -13,21 +13,23 @@ import { cn } from "@/lib/utils";
 import { AnimatedLink, ButtonLink, buttonVariants } from "./ui/Button";
 import React from "react";
 import { Header } from "./Header";
+import { Facebook, FacebookIcon, Instagram, InstagramIcon, LinkedinIcon } from "lucide-react";
 interface ILayout {
   children: ReactNode;
   globalContext: GlobalSectionsDocument<string>
   settings: SettingsDocument<string>
   headerMenu?: ReactNode
   noFooter?: boolean
+  services?: ServiceDocument<string>[]
 }
 
 
 
 
 
-const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }: ILayout) => {
-  const { footerHeading } = globalContext.data
-  const { slices: headerMenuItems, slices1: footerMenu, social } = settings.data
+const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu, services }: ILayout) => {
+  const { footerHeading, } = globalContext.data
+  const { slices: headerMenuItems, slices1: footerMenu, social, businessEmail, businessTelephone, streetAddress, addressRegion, postalCode, } = settings.data
   return (
     <>
       {/* <Header headerType={headerType} /> */}
@@ -79,23 +81,57 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu }:
                 })}
               </div> */}
             </div>
-            <div className="mt-14 lg:mt-24 space-y-3 md:space-y-0 text-center md:text-left md:flex flex-wrap justify-between items-end">
+            <div className="mt-14 lg:mt-24 space-y-4 md:space-y-0 text-center md:text-left md:flex flex-wrap justify-between items-end">
+              {/* {services ? (
+                <div className="">
+                  {services.map((service, index) => {
+                    const { data, uid } = service
+                    return (
+                      <div className="" key={index}>{uid}</div>
+                    )
+                  })
+                  }
+                </div>
+              ) : null} */}
+              <div className="space-y-4">
+                <div className="flex gap-2 justify-center md:justify-start">
+                  {social.map((socialItem, index) => {
+                    const { link, platform } = socialItem
+                    return (
+                      <React.Fragment key={index}>
+                        {isFilled.link(link) && isFilled.keyText(platform) ? (
+                          <Link href={link.url || ''} className="leading-none" key={index}>
+                            {platform === 'facebook' && <FacebookIcon />}
+                            {platform === 'instagram' && <InstagramIcon />}
+                            {platform === 'linkedin' && <LinkedinIcon />}
+                            <SmartText text={platform} variant="span" className="sr-only mb-0 text-sm underline lg:mb-0 uppercase" />
+                          </Link>
+                        ) : null}
+                      </React.Fragment>
+                    )
+                  })}
+                </div>
+                <div className="text-xs space-y-2">
+                  <div className="">
+                    <a href={`mailto:${businessEmail}`} className="inline-block">
+                      <SmartText text={businessEmail} variant="span" className="mb-0 lg:mb-0 uppercase" />
+                    </a>
+                  </div>
+                  <div className="">
+                    <a href={`tel:${businessTelephone}`} className="inline-block">
+                      <SmartText text={businessTelephone} variant="span" className="mb-0 lg:mb-0 uppercase" />
+                    </a>
+                  </div>
+                  <div className="">
+                    <SmartText text={streetAddress} variant="span" className="mb-0 lg:mb-0 uppercase" />&nbsp;
+                    <SmartText text={addressRegion} variant="span" className="mb-0 lg:mb-0 uppercase" />&nbsp;
+                    <SmartText text={postalCode} variant="span" className="mb-0 lg:mb-0 uppercase" />
+
+                  </div>
+                </div>
+              </div>
               <div className="text-xs">
                 {new Date().getFullYear()} &copy; ClickVisa. All rights reserved.
-              </div>
-              <div className="flex gap-2 justify-center">
-                {social.map((socialItem, index) => {
-                  const { link, platform } = socialItem
-                  return (
-                    <React.Fragment key={index}>
-                      {isFilled.link(link) && isFilled.keyText(platform) ? (
-                        <Link href={link.url || ''} className="leading-none" key={index}>
-                          <SmartText text={platform} variant="span" className="mb-0 text-sm underline lg:mb-0 uppercase" />
-                        </Link>
-                      ) : null}
-                    </React.Fragment>
-                  )
-                })}
               </div>
               <div className="">
                 <a href="#top" className="inline-flex gap-2 items-baseline" >

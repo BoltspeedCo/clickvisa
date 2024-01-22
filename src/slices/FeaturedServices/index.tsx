@@ -51,7 +51,7 @@ const FeaturedServices = ({ slice }: FeaturedServicesProps): JSX.Element => {
                       <SmartText text={name} variant="h4" size="h5" className="font-bold mb-3 lg:mb-4 capitalize" />
                       <PrismicRichText field={featuredDescription} components={
                         {
-                          paragraph: ({ children }) => <Typography variant="p" className="mb-0 lg:mb-0 text-justify" >{children}</Typography>,
+                          paragraph: ({ children }) => <Typography variant="p" className="mb-0 lg:mb-0 " >{children}</Typography>,
                         }
                       } />
                       {/* {featuredDescription ? <PrismicRichText field={featuredDescription} /> : null} */

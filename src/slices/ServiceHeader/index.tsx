@@ -48,7 +48,7 @@ const ServiceHeader = ({ slice }: ServiceHeaderProps): JSX.Element => {
             <div className="w-full md:order-2 md:col-span-3 ">
               <div className="">
                 <SmartText text={heading} variant="h2" className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-8" />
-                <SmartText text={bodyText} variant="p" className="text-justify" />
+                <SmartText text={bodyText} variant="p" className="" />
               </div>
             </div>
           </div>

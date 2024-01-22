@@ -59,9 +59,9 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className='sr-only'>Your Name</FormLabel>
+                                <FormLabel className=''>Your Name</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your Name" {...field} disabled={submitting} />
+                                    <Input placeholder="First Last" {...field} disabled={submitting} />
                                 </FormControl>
 
                                 <FormMessage />
@@ -74,9 +74,9 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className='sr-only'>Email Address</FormLabel>
+                                    <FormLabel className=''>Email Address</FormLabel>
                                     <FormControl>
-                                        <Input type='email' placeholder="Email Address" {...field} disabled={submitting} />
+                                        <Input type='email' placeholder="email@business.com.au" {...field} disabled={submitting} />
                                     </FormControl>
 
                                     <FormMessage />
@@ -88,9 +88,9 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
                             name="phone"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className='sr-only'>Phone</FormLabel>
+                                    <FormLabel className=''>You can call me on</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Phone" {...field} disabled={submitting} />
+                                        <Input placeholder="+61..." {...field} disabled={submitting} />
                                     </FormControl>
 
                                     <FormMessage />
@@ -103,7 +103,7 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
                         name="services"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className='pl-2.5 text-muted-foreground'>Services</FormLabel>
+                                <FormLabel className=''>Services</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value} disabled={submitting}>
                                     <FormControl>
                                         <SelectTrigger>
@@ -128,7 +128,7 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
                         name="message"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className='sr-only'>Services</FormLabel>
+                                <FormLabel className=''>Message</FormLabel>
                                 <FormControl>
                                     <Textarea placeholder="Your message" {...field} disabled={submitting} />
                                 </FormControl>

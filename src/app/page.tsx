@@ -22,6 +22,7 @@ export default async function Home() {
   const page = await client.getByUID('flexiblePage', 'homepage', {
     fetchLinks: ['service.name', 'service.featuredDescription', 'service.featuredIcon']
   })
+  const services = await client.getAllByType('service')
   const globalSections = await client.getSingle('globalSections')
   const settings = await client.getSingle('settings')
   const { addressCountry, addressLocality, addressRegion, businessDescription, businessEmail, businessName, businessTelephone, images, logo, postalCode, streetAddress } = settings.data
@@ -29,7 +30,7 @@ export default async function Home() {
 
   // console.log("page", page)
   return (
-    <RootLayout settings={settings} globalContext={globalSections}>
+    <RootLayout services={services} settings={settings} globalContext={globalSections}>
       <LocalBusinessJsonLd
         useAppDir={true}
         type='LegalService'

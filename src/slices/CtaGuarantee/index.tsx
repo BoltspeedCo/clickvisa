@@ -42,7 +42,7 @@ const CtaGuarantee = ({ slice }: CtaGuaranteeProps): JSX.Element => {
         <div className=" flex flex-wrap  items-start -mx-6 lg:-mx-12">
           <div className="w-full lg:w-2/3 px-6 lg:px-12">
             <div className="md:columns-1 gap-10  md:gap-16">
-              <SmartText text={bodyText} variant="p" className=" text-justify" />
+              <SmartText text={bodyText} variant="p" className=" " />
 
             </div>
           </div>

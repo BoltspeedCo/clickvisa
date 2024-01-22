@@ -63,7 +63,7 @@ const Steps = ({ slice, context }: StepsProps & { context: SliceZoneContext }): 
               <li className="w-full md:w-1/2 lg:w-1/3 md:max-w-sm px-6 lg:px-12 mb-9 md:mb-12 lg:mb-12 xl:mb-16" key={index}>
                 <div className="text-lg leading-none lg:text-xl font-bold bg-background w-9 h-9 lg:w-12 lg:h-12 flex items-center justify-center text-center mb-5 lg:mb-6"><span>0{index + 1}</span></div>
                 <SmartText text={stepItem.stepHeading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-4" />
-                <SmartText text={stepItem.stepDescription} variant="p" className="mb-0 text-justify" />
+                <SmartText text={stepItem.stepDescription} variant="p" className="mb-0 " />
               </li>
             ))
           ) : null}
@@ -73,7 +73,7 @@ const Steps = ({ slice, context }: StepsProps & { context: SliceZoneContext }): 
                 <div className="text-lg leading-none lg:text-xl font-bold bg-background w-9 h-9 lg:w-12 lg:h-12 flex items-center justify-center text-center mb-5 lg:mb-6"><span>0{index + 1}</span></div>
 
                 <SmartText text={stepItem.heading} variant="h3" size="h4" className="font-bold mb-3 lg:mb-3" />
-                <SmartText text={stepItem.description} variant="p" className="mb-0 text-justify" />
+                <SmartText text={stepItem.description} variant="p" className="mb-0 " />
               </li>
             ))
           ) : null}
