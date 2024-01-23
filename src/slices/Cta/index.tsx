@@ -53,7 +53,7 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
             <SmartText text={heading} variant="h2" size="h2" className="font-medium lg:text-[40px]  md:max-w-3xl mb-5 lg:mb-10" />
             <SmartText text={bodyText} variant="p" className="" />
             {isFilled.link(buttonLink) && isFilled.keyText(buttonText) ? (
-              <div className="w-full h-full text-center ">
+              <div className="w-full h-full  ">
                 <ButtonLink href={buttonLink.url || ''} className="text-backghund bg-transparent border-background"  >
                   {buttonText}
                 </ButtonLink>

@@ -13,8 +13,9 @@ export type FeaturedListsProps =
 /**
  * Component for "FeaturedLists" Slices.
  */
-const FeaturedLists = ({ slice }: FeaturedListsProps): JSX.Element => {
+const FeaturedLists = ({ slice, }: FeaturedListsProps): JSX.Element => {
   const lists = slice.items
+  const { heading } = slice.primary
   return (
     <Section
       name="featured-lists"
@@ -24,6 +25,7 @@ const FeaturedLists = ({ slice }: FeaturedListsProps): JSX.Element => {
       <Container size="default">
 
         <div className=" mx-auto space-y-6 lg:space-y-12">
+          <SmartText text={heading} variant="h2" className="text-center uppercase mb-12 md:mb-12 lg:mb-20 xl:mb-24 max-w-3xl mx-auto" />
           {lists.map((list, index) => {
             const { description, heading } = list
             return (

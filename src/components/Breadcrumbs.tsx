@@ -47,15 +47,17 @@ const Breadcrumbs = ({ }: Props) => {
                                     </svg>
                                 </div>
                             </li>
-                            {parents.map(({ name, path }) => {
-
+                            {parents.map(({ name, path }, index) => {
+                                const isLast = index === parents.length - 1
                                 return (
 
                                     <li key={name}>
                                         <div className='flex gap-1 md:gap-2 items-center'>
                                             <Link href={path} className="">
 
-                                                <span className="">{name}</span>
+                                                <span className="">
+                                                    {name}
+                                                </span>
                                             </Link>
                                             <svg
                                                 className="h-4 w-4 flex-shrink-0 "
@@ -73,7 +75,7 @@ const Breadcrumbs = ({ }: Props) => {
                         </ol>
                     </nav>
                     <div className="md:col-span-3">
-                        <SmartText text={currentPath.name} variant="h1" size="h5" className="uppercase font-bold mb-0 lg:mb-0 text-2xl lg:text-3xl" />
+                        <SmartText text={`${currentPath.name}.`} variant="h1" size="h5" className="uppercase font-bold mb-0 lg:mb-0 text-2xl lg:text-3xl" />
                     </div>
                 </div>
             </Container>

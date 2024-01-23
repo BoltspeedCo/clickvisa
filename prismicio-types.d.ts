@@ -1488,6 +1488,21 @@ type FaqSliceVariation = FaqSliceDefault;
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
+ * Primary content in *FeaturedLists → Primary*
+ */
+export interface FeaturedListsSliceDefaultPrimary {
+  /**
+   * heading field in *FeaturedLists → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_lists.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
  * Primary content in *FeaturedLists → Items*
  */
 export interface FeaturedListsSliceDefaultItem {
@@ -1521,7 +1536,7 @@ export interface FeaturedListsSliceDefaultItem {
  */
 export type FeaturedListsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FeaturedListsSliceDefaultPrimary>,
   Simplify<FeaturedListsSliceDefaultItem>
 >;
 
@@ -2695,6 +2710,7 @@ declare module "@prismicio/client" {
       FaqSliceVariation,
       FaqSliceDefault,
       FeaturedListsSlice,
+      FeaturedListsSliceDefaultPrimary,
       FeaturedListsSliceDefaultItem,
       FeaturedListsSliceVariation,
       FeaturedListsSliceDefault,

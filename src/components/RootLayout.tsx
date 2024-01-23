@@ -29,7 +29,7 @@ interface ILayout {
 
 const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu, services }: ILayout) => {
   const { footerHeading, } = globalContext.data
-  const { slices: headerMenuItems, slices1: footerMenu, social, businessEmail, businessTelephone, streetAddress, addressRegion, postalCode, } = settings.data
+  const { slices: headerMenuItems, slices1: footerMenu, social, businessEmail, businessTelephone, streetAddress, addressRegion, postalCode, addressLocality } = settings.data
   return (
     <>
       {/* <Header headerType={headerType} /> */}
@@ -124,6 +124,7 @@ const RootLayout = ({ settings, globalContext, children, noFooter, headerMenu, s
                   </div>
                   <div className="">
                     <SmartText text={streetAddress} variant="span" className="mb-0 lg:mb-0 uppercase" />&nbsp;
+                    <SmartText text={addressLocality} variant="span" className="mb-0 lg:mb-0 uppercase" />&nbsp;
                     <SmartText text={addressRegion} variant="span" className="mb-0 lg:mb-0 uppercase" />&nbsp;
                     <SmartText text={postalCode} variant="span" className="mb-0 lg:mb-0 uppercase" />
 
