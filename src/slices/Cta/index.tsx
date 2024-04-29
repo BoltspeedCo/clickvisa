@@ -37,7 +37,7 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
       name="cta"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-0 lg:pb-0"
+      className="pb-0 lg:pb-0 overflow-hidden"
     >
       <div className="-mx-4 md:-mx-8 bg-foreground relative overflow-hidden">
         <div className="absolute w-full md:w-2/3 lg:w-7/12 right-0 h-[150px] md:h-full bottom-0 md:top-0 overflow-hidden">
@@ -47,8 +47,8 @@ const Cta = ({ slice, context }: CtaProps): JSX.Element => {
         <div className="absolute w-full md:w-2/3 lg:w-7/12 h-[150px] md:h-full bottom-0 md:top-0 right-0  bg-radial-gradient-foreground">
 
         </div>
-        <div className="max-w-6xl mx-auto relative">
-          <div className=" max-w-4xl  text-background pt-12 pb-28 p-6 md:p-8 lg:px-12 xl:px-16 py-16 lg:py-32 text-left  flex flex-col md:items-center">
+        <div className="max-w-6xl mx-auto relative overflow-hidden">
+          <div className=" max-w-4xl mx-auto  text-background pt-12 pb-28 p-6 md:p-8 lg:px-12 xl:px-16 py-16 lg:py-32 text-left  flex flex-col  lg:items-center">
             <SmartText text={preHeading} variant="h5" size="h6" className=" font-normal mb-3 lg:mb-4 capitalize " />
             <SmartText text={heading} variant="h2" size="h2" className="font-medium lg:text-[40px]  md:max-w-3xl mb-5 lg:mb-10" />
             <SmartText text={bodyText} variant="p" className="" />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { PrismicPreview } from '@prismicio/next'
 import { repositoryName } from '@/prismicio'
+import { Toaster } from "@/components/ui/sonner"
 
 
 
@@ -20,6 +21,7 @@ export default function Layout({
       <body >
         {children} <PrismicPreview repositoryName={repositoryName} />
         {/* <div className="h-full w-full grid place-items-center"><span className="text-4xl">suspended.</span></div> */}
+        <Toaster position="bottom-center" richColors closeButton />
 
       </body>
     </html>

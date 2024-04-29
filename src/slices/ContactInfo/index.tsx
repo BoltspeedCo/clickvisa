@@ -45,7 +45,7 @@ const ContactInfo = ({ slice }: ContactInfoProps): JSX.Element => {
             </div>
           </div>
           <div className="w-full md:w-6/12 px-6 md:px-12">
-            <div className="mt-24 lg:mt-0 ">
+            <div className="mt-24 md:mt-0 ">
               <SmartText text={formHeading} variant="h2" size="h3" className="  mb-10 md:mb-12 lg:mb-14 xl:mb-20" />
               <ContactForm formsparkId={isFilled.keyText(formsparkId) ? formsparkId : "H7AMrmTH"} />
             </div>

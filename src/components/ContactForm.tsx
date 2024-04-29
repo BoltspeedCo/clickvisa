@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Link } from 'lucide-react';
 import { Textarea } from './ui/Textarea';
 import { kebabCase } from 'change-case';
+import { toast } from 'sonner';
 type Props = {
 
 }
@@ -32,13 +33,20 @@ const formSchema = z.object({
     email: z.string().email({ message: "Please enter a valid email" }),
     phone: z.string().min(10, { message: "Please enter a valid phone number" }),
     services: z.string().min(2, { message: "Please enter a valid service" }),
-    message: z.string().min(10, { message: "Please enter a valid message" }),
+    message: z.string().min(1, { message: "Please enter a valid message" }),
 })
 type ContactFormProps = {
     formsparkId: string
 }
 const ContactForm = ({ formsparkId }: ContactFormProps) => {
     const form = useForm<z.infer<typeof formSchema>>({
+        defaultValues: {
+            name: '',
+            email: '',
+            phone: '',
+            services: '',
+            message: ''
+        },
         resolver: zodResolver(formSchema),
     })
     const { formState, handleSubmit, reset } = form
@@ -46,7 +54,12 @@ const ContactForm = ({ formsparkId }: ContactFormProps) => {
         formId: formsparkId,
     });
     const onSubmitHandler = handleSubmit(async (data) => {
-        await submit(data)
+        // toast.success('Successfully submitted! We will be in touch soon')
+        await toast.promise(submit(data), {
+            loading: 'Submitting...',
+            success: 'Successfully submitted! We will be in touch soon',
+            error: 'An error occurred, please try again later.'
+        });
         reset()
 
     })

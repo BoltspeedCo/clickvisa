@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { uid: string } }):
   const page = await client.getByUID('flexiblePage', params.uid)
 
   return {
-    title: page.data.meta_title || 'Clickvisa',
+    title: page.data.meta_title || websiteConfig.defaultMetadata.title,
     description: page.data.meta_description || websiteConfig.defaultMetadata.description,
     openGraph: {
       type: 'website',
